@@ -13,8 +13,8 @@ from telebot import types
 from subprocess import Popen, PIPE
 
 
-token = '6172744012:AAHCFxQr9jX-lC3JT1GcyvmnnbFBHRF-WXI'
-id_chat = '-1001353510808'
+token = ''
+id_chat = ''
 bot = telebot.TeleBot(token, threaded=True)
 
 @bot.message_handler(commands=['start'])
