@@ -1,0 +1,6 @@
+pillow 
+hackpy 
+telebot
+requests
+pytelegrambotapi
+opencv-python
