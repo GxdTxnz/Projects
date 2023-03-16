@@ -7,11 +7,13 @@ import json
 import cv2
 import requests as r
 import subprocess
+import telepot, requests  
 from json import loads
 from PIL import ImageGrab
 from telebot import util
 from telebot import types
 from subprocess import Popen, PIPE
+from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 token = ''
