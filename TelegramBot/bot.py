@@ -7,6 +7,7 @@ import json
 import cv2
 import requests as r
 import subprocess
+from json import loads
 from PIL import ImageGrab
 from telebot import util
 from telebot import types
@@ -99,5 +100,17 @@ def webcam(command):
 	except:
 		bot.send_chat_action(id_chat, 'typing')
 		bot.send_message(id_chat, '*Webcam not found*', parse_mode="Markdown")
+		
+@bot.message_handler(commands=['url'])
+def opnurl(message):
+	user_msg = '{0}'.format(message.text)
+	url = user_msg.split(' ')[1]
+	try:
+		webbrowser.open_new_tab(url)
+	except:
+		bot.send_message(id_chat, 'Error')
+
+bot.infinity_polling()
+
 		
 bot.infinity_polling()
