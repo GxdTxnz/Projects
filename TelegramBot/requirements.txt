@@ -4,3 +4,11 @@ telebot
 requests
 pytelegrambotapi
 opencv-python
+telepot
+image
+winshell
+tendo
+pypiwin32
+pyinstaller
+psutil
+console-tools
