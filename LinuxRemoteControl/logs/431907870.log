@@ -1,0 +1,110 @@
+Fri Mar 17 13:27:47 2023 - Auth >> Failed log in using token , attempt left 4
+Fri Mar 17 13:28:48 2023 - Auth >> Logged in successfully using token root
+Fri Mar 17 13:29:08 2023 - Command >> Get permissions
+Fri Mar 17 13:29:15 2023 - Location >> Trying get coordinates based on BSSID address
+Fri Mar 17 13:29:16 2023 - Location >> Trying get coordinates based on IP address
+Fri Mar 17 13:29:40 2023 - Command >> Get system info
+Fri Mar 17 13:30:18 2023 - TaskManager >> Get process list
+Fri Mar 17 13:30:27 2023 - TaskManager >> Kill process 1410
+Fri Mar 17 13:32:24 2023 - Keyboard >> Send keyboard 
+Fri Mar 17 13:32:42 2023 - Webcam >> Create screenshot from device 0
+Fri Mar 17 13:33:37 2023 - Keyboard >> Send keyboard 
+Fri Mar 17 13:33:41 2023 - Keyboard >> Send key press CTRL
+Fri Mar 17 13:34:07 2023 - Keyboard >> Send key press TAB
+Fri Mar 17 13:34:20 2023 - Keyboard >> Send key press TAB
+Fri Mar 17 13:35:00 2023 - Keyboard >> Send key press COMMAND
+Fri Mar 17 13:35:20 2023 - TaskManager >> Get process list
+Fri Mar 17 13:35:26 2023 - TaskManager >> Kill process 51825
+Fri Mar 17 15:30:07 2023 - Auth >> Failed log in using token , attempt left 4
+Fri Mar 17 15:36:00 2023 - Auth >> Logged in successfully using token root
+Fri Mar 17 15:36:20 2023 - TaskManager >> Get process list
+Fri Mar 17 15:36:29 2023 - TaskManager >> Kill process 3452
+Fri Mar 17 15:36:50 2023 - Webcam >> Start video recording from device 0
+Fri Mar 17 15:36:54 2023 - Webcam >> Stop video recording from device 0
+Fri Mar 17 15:37:24 2023 - Shell >> Session opened
+Fri Mar 17 15:37:36 2023 - Shell >> Run command cd /
+Fri Mar 17 15:37:44 2023 - Shell >> Run command ls
+Fri Mar 17 15:38:09 2023 - Shell >> Run command cd /home/gxdtxnz/Рабочий \стол/
+Fri Mar 17 15:38:12 2023 - Shell >> Run command ls
+Fri Mar 17 15:38:55 2023 - Filemanager action 'Open', taget file: '/home'
+Fri Mar 17 15:39:04 2023 - Filemanager action 'Open', taget file: '/home/gxdtxnz'
+Fri Mar 17 15:39:12 2023 - Filemanager action 'Open', taget file: '/home/gxdtxnz/Рабочий стол'
+Fri Mar 17 15:39:27 2023 - Filemanager action 'Download', taget file: '/home/gxdtxnz/Рабочий стол/DZ.txt'
+Fri Mar 17 15:39:27 2023 - Transfer >> Upload file '/home/gxdtxnz/Рабочий стол/DZ.txt' to telegram
+Fri Mar 17 15:39:43 2023 - Filemanager action 'Download', taget file: '/home/gxdtxnz/Рабочий стол/school.py'
+Fri Mar 17 15:39:43 2023 - Transfer >> Upload file '/home/gxdtxnz/Рабочий стол/school.py' to telegram
+Fri Mar 17 15:40:09 2023 - Filemanager action 'Delete', taget file: '/home/gxdtxnz/Рабочий стол/school.py'
+Fri Mar 17 15:42:32 2023 - Keyboard >> Send keyboard 
+Fri Mar 17 15:42:54 2023 - Power >> Send power event SHUTDOWN
+Fri Mar 17 21:25:35 2023 - Auth >> Failed log in using token , attempt left 4
+Fri Mar 17 21:26:17 2023 - Auth >> Failed log in using token d4309892-96c0-42ba-bded-27e2799042a1, attempt left 3
+Fri Mar 17 21:27:24 2023 - Auth >> Logged in successfully using token root
+Fri Mar 17 21:27:40 2023 - Location >> Trying get coordinates based on BSSID address
+Fri Mar 17 21:27:40 2023 - Location >> Trying get coordinates based on IP address
+Fri Mar 17 21:28:45 2023 - Screenshot >> Get desktop screenshot
+Fri Mar 17 21:29:27 2023 - Filemanager action 'Download', taget file: '/home/gxdtxnz/Рабочий стол/DZ.txt'
+Fri Mar 17 21:29:27 2023 - Transfer >> Upload file '/home/gxdtxnz/Рабочий стол/DZ.txt' to telegram
+Fri Mar 17 21:30:16 2023 - Keyboard >> Send keyboard 
+Fri Mar 17 21:30:40 2023 - Keyboard >> Send key press BACKSPACE
+Fri Mar 17 21:30:44 2023 - Keyboard >> Send key press TAB
+Fri Mar 17 21:30:49 2023 - Keyboard >> Send key press TAB
+Fri Mar 17 21:30:52 2023 - Keyboard >> Send key press ESC
+Fri Mar 17 21:30:52 2023 - Keyboard >> Send key press ESC
+Fri Mar 17 21:30:55 2023 - Keyboard >> Send key press ENTER
+Fri Mar 17 21:31:17 2023 - Power >> Send power event SHUTDOWN
+Fri Mar 17 21:33:57 2023 - Webcam >> Create screenshot from device 0
+Fri Mar 17 21:34:19 2023 - Webcam >> Create screenshot from device 0
+Fri Mar 17 21:35:41 2023 - Command >> Get permissions
+Fri Mar 17 21:36:08 2023 - Keyboard >> Send key press COMMAND
+Fri Mar 17 21:36:12 2023 - Keyboard >> Send key press COMMAND
+Fri Mar 17 21:36:47 2023 - Microphone >> Start voice recording
+Fri Mar 17 21:36:55 2023 - Microphone >> Stop voice recording
+Fri Mar 17 21:38:16 2023 - TaskManager >> Get process list
+Fri Mar 17 21:38:30 2023 - TaskManager >> Kill process 2772
+Fri Mar 17 21:55:34 2023 - Power >> Send power event SHUTDOWN
+Sun Mar 19 02:54:02 2023 - Auth >> Failed log in using token d4309892-96c0-42ba-bdсd-27e2799042a1, attempt left 4
+Sun Mar 19 02:54:52 2023 - Auth >> Failed log in using token d4309892-96c0-42ba-bdсd-27e2799042a1, attempt left 3
+Sun Mar 19 02:55:47 2023 - Auth >> Failed log in using token d4309892-96c0-43ba-27e2799042a1, attempt left 2
+Sun Mar 19 02:57:20 2023 - Auth >> Logged in successfully using token root1
+Sun Mar 19 02:58:18 2023 - Screenshot >> Get desktop screenshot
+Sun Mar 19 02:58:28 2023 - Screenshot >> Get desktop screenshot
+Sun Mar 19 02:58:47 2023 - Screenshot >> Get desktop screenshot
+Sun Mar 19 02:58:50 2023 - TaskManager >> Get process list
+Sun Mar 19 02:58:53 2023 - TaskManager >> Kill process 3018
+Sun Mar 19 02:58:58 2023 - TaskManager >> Get process list
+Sun Mar 19 02:59:04 2023 - Screenshot >> Get desktop screenshot
+Sun Mar 19 02:59:32 2023 - Filemanager action 'Open', taget file: '/home/gxdtxnz/Рабочий стол/HOMIES'
+Sun Mar 19 02:59:42 2023 - Filemanager action 'Open', taget file: '/home/gxdtxnz/Рабочий стол/HOMIES/README.md'
+Sun Mar 19 02:59:44 2023 - Filemanager action 'Download', taget file: '/home/gxdtxnz/Рабочий стол/HOMIES/README.md'
+Sun Mar 19 02:59:44 2023 - Transfer >> Upload file '/home/gxdtxnz/Рабочий стол/HOMIES/README.md' to telegram
+Sun Mar 19 03:00:05 2023 - Command >> Get system info
+Sun Mar 19 03:00:53 2023 - Keyboard >> Send keyboard 
+Sun Mar 19 03:01:06 2023 - Keyboard >> Send text прпррпрп
+Sun Mar 19 03:01:47 2023 - Microphone >> Start voice recording
+Sun Mar 19 03:01:53 2023 - Microphone >> Stop voice recording
+Sun Mar 19 03:02:03 2023 - Webcam >> Start video recording from device 0
+Sun Mar 19 03:02:07 2023 - Webcam >> Stop video recording from device 0
+Sun Mar 19 03:02:12 2023 - Webcam >> Create screenshot from device 0
+Sun Mar 19 03:02:33 2023 - Webcam >> Create screenshot from device 0
+Sun Mar 19 03:02:44 2023 - Shell >> Session opened
+Sun Mar 19 03:03:02 2023 - Keyboard >> Send text ghghghgh
+Sun Mar 19 03:03:09 2023 - Keyboard >> Send keyboard 
+Sun Mar 19 03:03:20 2023 - Keyboard >> Send key press ENTER
+Sun Mar 19 03:03:29 2023 - Keyboard >> Send text сергей the gay
+Sun Mar 19 03:03:43 2023 - Screenshot >> Get desktop screenshot
+Sun Mar 19 03:04:49 2023 - Shell >> Session closed
+Sun Mar 19 03:05:23 2023 - Keyboard >> Send text firefox
+Sun Mar 19 03:05:27 2023 - Keyboard >> Send keyboard 
+Sun Mar 19 03:05:29 2023 - Keyboard >> Send key press ENTER
+Sun Mar 19 03:05:36 2023 - Screenshot >> Get desktop screenshot
+Sun Mar 19 03:05:42 2023 - Keyboard >> Send key press TAB
+Sun Mar 19 03:05:45 2023 - Keyboard >> Send key press ALT
+Sun Mar 19 03:06:03 2023 - Keyboard >> Send text alt+tab
+Mon Mar 20 12:06:57 2023 - Auth >> Failed log in using token 1180ccce4-ee72-438c-b4c2-fd637e5f523b, attempt left 4
+Mon Mar 20 12:07:01 2023 - Auth >> Failed log in using token 1180ccce4-ee72-438c-b4c2-fd637e5f523b, attempt left 3
+Mon Mar 20 12:07:14 2023 - Auth >> Logged in successfully using token Tenshiki
+Mon Mar 20 12:49:08 2023 - Command >> Get permissions
+Mon Mar 20 12:49:16 2023 - Auth >> User logged out
+Mon Mar 20 12:49:32 2023 - Auth >> Logged in successfully using token ADMIN
+Mon Mar 20 12:52:42 2023 - Filemanager action 'Download', taget file: '/home/gxdtxnz/Рабочий стол/BlazeRAT/BlazeRAT/authtoken.txt'
+Mon Mar 20 12:52:42 2023 - Transfer >> Upload file '/home/gxdtxnz/Рабочий стол/BlazeRAT/BlazeRAT/authtoken.txt' to telegram
