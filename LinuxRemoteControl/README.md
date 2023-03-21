@@ -1,6 +1,6 @@
 ## На случай ошибок при сборке:
 ``` bash
-apt-get install alsa-utils
+sudo apt-get install alsa-utils
 pip3 install pyxhook
 sudo apt install portaudio19-dev
 ```
