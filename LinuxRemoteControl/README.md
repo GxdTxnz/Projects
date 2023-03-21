@@ -25,4 +25,8 @@ python3 main.py
 python3 main.py --InstallAgent
 ```
 
+## Список команд:
 
+``` bash
+python3 main.py -h
+```
