@@ -20,7 +20,7 @@ python3 main.py
 /authorized `сгенерированный токен`
 ```
 
-##Запись в автозагузку:
+## Запись в автозагузку:
 ``` bash
 python3 main.py --InstallAgent
 ```
