@@ -15,7 +15,7 @@ from services.startup import \
 
 """ Handle cli commands """
 def ParseArgs():
-    parser = ArgumentParser(description="BlazeRAT - Command Line Interface")
+    parser = ArgumentParser(description="RAT - Command Line Interface")
 
     # Token manager
     parser.add_argument("--perms", nargs="+", type=str,
