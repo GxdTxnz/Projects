@@ -66,3 +66,4 @@ def ServiceUninstall() -> str:
         rmtree(INSTALL_DIRECTORY)
     # Done
     return "[+] RAT agent uninstalled"
+
