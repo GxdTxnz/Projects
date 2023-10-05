@@ -1,11 +1,13 @@
-<!-- START doctoc -->
+# Оглавление
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
 [Что такое LVM?](#что-такое-lvm)
 
 [Установка](#установка)
 
 [Начало работы](#начало-работы)
 
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Объясняю работу с LVM на пальцах, как новенький(правки рекомендуются)
 ## Что такое LVM?
