@@ -40,7 +40,7 @@ ii  lvm2                                  2.03.11-2.1ubuntu4                    
 - Если LVM у вас не установлен, то используйте команду `apt-get install lvm2`
 ## Начало работы
 Для начала проверим список уже имеющихся физических и логических томов командой `lsblk`:
-```bash
+```shell
 :~$ lsblk
 NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
 loop0                       7:0    0    62M  1 loop /snap/core20/1587
