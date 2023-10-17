@@ -64,3 +64,59 @@ sr0                        11:0    1   1,4G  0 rom
 :~$ pvcreate /dev/sdb
 Physical volume "/dev/sdb" successfully created
 ```
+  - В принципе, чтобы создать логически том, нам нужно для начала инициализировать физический, так что предыдущий шаг обязателен во всех случаях.
+  - Теперь создаем нашу volume group с названием *__test-lv__* и добавляем туда наш *__sdb__*
+```bash
+:~$ vgcreate -s 32M test-lv /dev/sdb
+```
+  - Далее создадим *__logical volume__*, размером равным размеру нашего диска *__sdb__* и названием *__lv1__*
+```bash
+:~$ lvcreate -n lv1 -l +100%FREE test-lv
+```
+  - Важно заметить, что если вы в качестве параметра для `-l` передаете фиксированное значение, например, 20GB, а потом хотите расширить ваш логический том до полного размера диска, то передав параметру `-l` значение `100%FREE`, вы расширите ваш том не на всю свободную “площадь“, а лишь на то количество, которое у вас уже занимал том, т.е. еще на 20GB. Чтобы этого избежать нужно использовать значение, приведенное в примере
+  - Теперь назначим файловую систему
+```bash
+:~$ mkfs.ext4 /dev/test-lv/lv1
+```
+  - Проверьте полученный результат командами `lvdisplay` и `lsblk`
+```bash
+:~$ lvdisplay  
+  --- Logical volume ---
+  LV Path                /dev/test-lv/lv1
+  LV Name                lv1
+  VG Name                test-lv
+  LV UUID                PBX9j7-JOXq-WmX9-H954-Onr4-9BuY-6m0xJX
+  LV Write Access        read/write
+  LV Creation host, time root, 2023-10-08 20:21:25 +0000
+  LV Status              available
+  # open                 1
+  LV Size                70,00 GiB
+  Current LE             1023
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:1
+```
+```bash
+:~$ lsblk
+NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0                       7:0    0    62M  1 loop /snap/core20/1587
+loop1                       7:1    0  63,5M  1 loop /snap/core20/2015
+loop2                       7:2    0  79,9M  1 loop /snap/lxd/22923
+loop3                       7:3    0 111,9M  1 loop /snap/lxd/24322
+loop4                       7:4    0  40,8M  1 loop /snap/snapd/20092
+sda                         8:0    0    32G  0 disk
+├─sda1                      8:1    0     1M  0 part
+├─sda2                      8:2    0     2G  0 part /boot
+└─sda3                      8:3    0    30G  0 part
+  └─ubuntu--vg-ubuntu--lv 253:1    0    30G  0 lvm  /
+sdb                         8:16   0    70G  0 disk
+└─test--lv-lv1            253:1    0    70G  0 lvm
+sr0                        11:0    1   1,4G  0 rom
+```
+  - Теперь создадим директорию data и примонтируем ее к нашему логическому тому командами `mkdir` и `mount`
+```bash
+:~$ mkdir /data
+:~$ mount mount /dev/test-lv/lv1 /data/
+```
