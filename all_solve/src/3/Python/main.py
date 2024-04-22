@@ -1,42 +1,42 @@
 import os
 import hashlib
 from Cryptodome.Cipher import AES
+from tqdm import tqdm
 
-n = input("Введите для папки Passes: ")
+n = input("Введите название папки Passes: ")
 m = int(input("Минимальная длина пароля: "))
 s = int(input("Длина пароля: "))
-os.mkdir(f'Results_{n}')
+results_dir = f'Results_{n}'
+os.mkdir(results_dir)  # Создание директории для результатов
+
 salt = b'SALT'
-iterations = 100
+iterations = 123
+decripted_data = bytearray.fromhex('CA9E522E36D2B076AFA26C926074C3A4'
+                                   'E822773BC45413870D88489D97BA4FE5'
+                                   'C0911F9B8944723D2B74BA54633036E3'
+                                   'D271DD0AF55DAFECA78FCA3AC0F9AAEE')
+
 found = False
 
-decripted_data = bytearray.fromhex('F9E4641D212F33E7A7DA288135DA3C58'
-                                   'A78A3762DA6A4441E6D963B973E2688E'
-                                   'A28BF0730FFE92E3D17B22886F05D26F'
-                                   '935E40CE90F39AEFDBBF5403C315C846')
-
 for i in range(m, s + 1):
-    with open(f'Passes_{n}/comb_{i}.txt', 'r') as f, open(f'Results_{n}/result_{i}.txt', 'w', encoding='utf-8') as f_result:
-        total_lines = sum(1 for line in f)
-        f.seek(0)
-        for count, line in enumerate(f, 1):
+    input_filename = f'Passes_{n}/comb_{i}.txt'
+    output_filename = f'{results_dir}/result_{i}.txt'
+
+    with open(input_filename, 'r', encoding='utf-8') as f, open(output_filename, 'w', encoding='utf-8') as f_result:
+        for line in tqdm(f, desc=f'Processing comb_{i}.txt'):
             password = line.strip().encode()
             key = hashlib.pbkdf2_hmac('sha1', password, salt, iterations, dklen=16)
             decipher = AES.new(key, AES.MODE_ECB)
-            encripted_data = decipher.decrypt(decripted_data)
-            s = encripted_data.decode('UTF-8', errors='ignore')
-            f_result.write(f"{s}\n")
-            if "End data" in s:
-                print(f"Пароль: {line.strip()}, Текст: {s}")
+            encrypted_data = decipher.decrypt(decripted_data)
+            decrypted_text = encrypted_data.decode('utf-8', errors='ignore')
+            
+            if "End data" in decrypted_text:
+                f_result.write(f"{decrypted_text}\n")
+                print(f"Пароль: {line.strip()}, Текст: {decrypted_text}")
                 found = True
                 break
 
-            percent = int(count / total_lines * 100)
-            fill_length = int(percent / 2)
-            empty_length = 50 - fill_length
-            progress_bar = f"[{'=' * fill_length}{' ' * empty_length}] {percent}%"
-            print(f'{i}' + progress_bar, end='\r')
-    print('\n')
     if found:
         break
+
 print("Готово!")
